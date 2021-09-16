@@ -5,3 +5,24 @@ Content-Type: application/json
     "username": "user1@user.com",
     "password": "123456"
 }
+
+
+###
+//Tentando acessar sem token, o guard impede
+GET http://localhost:3000/test-auth
+
+###
+// informando o token, não expirado
+GET http://localhost:3000/test-auth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoidXNlcjFAdXNlci5jb20iLCJpYXQiOjE2MzE3NTc4MTMsImV4cCI6MTYzMTc1Nzg3M30.tISEFxrhwTJwiVej8zPtxMyoIdGXshYFpmmGJI8JlQA
+
+###
+// informando o token, não expirado - exibe detalhes da requisição usando Req()
+GET http://localhost:3000/test-auth2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoidXNlcjFAdXNlci5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MzE3NTk0NDIsImV4cCI6MTYzMTc1OTUwMn0.u5QdePSNuGGG3DSFcosCCCAPKqsbMAsap7SRdDMx6hs
+
+###
+GET http://localhost:3000/exemplo
+
+###
+GET http://localhost:3000/teste

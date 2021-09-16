@@ -1,7 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
+import * as bcrypt from 'bcrypt';
 
 //senhas geradas com node generate-pass.js 123456
-const users: {}[] = [
+const users = [
     {
         id: 1,
         username: 'user1@user.com',
@@ -24,7 +26,26 @@ const users: {}[] = [
 
 @Injectable()
 export class AuthService {
+    constructor(private jwtService: JwtService) {
+            
+    }
     login(username:string, password:string){
-        console.log(username, password);
+        //console.log(username, password);
+        const user = this.validateCredentials(username, password);
+        const payload = {
+            sub: user.id, //para quem o token foi gerado
+            username: user.username,
+            role: user.role,
+        };
+        return this.jwtService.sign(payload); //aqui é feita a chamada para criação do token
+    }
+
+    //neste exemplo é feita a consulta do array de users acima, mas aqui poderia ser a consulta ao DB
+    validateCredentials(username: string, password: string) {
+        const user = users.find(
+            (u) => u.username === username && bcrypt.compareSync(password, u.password),
+        );
+
+        return user;
     }
 }
