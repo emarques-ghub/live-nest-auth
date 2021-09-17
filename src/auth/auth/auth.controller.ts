@@ -1,6 +1,7 @@
 //import { Controller, Get } from '@nestjs/common';
 import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
 import { Role } from '../role.decorator';
+import { RoleGuard } from '../role.guard';
 import { AuthService } from './auth.service';
 import { JwtGuard } from './jwt.guard';
 
@@ -25,10 +26,11 @@ export class AuthController {
     };
   }
 
+  //Guards tem que ser declarados na ordem certa
   //Para restringir conforme a autorizacao do usuario
   @Role('admin')
   //Para proteger um metodo especifico da API e acionar o guardião definido em jwt.guard.ts
-  @UseGuards(JwtGuard)
+  @UseGuards(JwtGuard, RoleGuard)
   @Get('test-auth2')
   test2(@Req() req) {
     console.log(req.user);
