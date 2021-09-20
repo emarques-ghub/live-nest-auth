@@ -8,6 +8,11 @@ services:
       - 3000:3000
     volumes: 
       - .:/home/node/app
+    extra_hosts: 
+      - "host.docker.internal:172.17.0.1"
 
+#   para comunicar com o kafka
+#    extra_hosts: 
+#      -  "host.docker.internal:172.17.0.1"
 
 #antes de executar, dar permissao:  chmod +x entrypoint.sh
