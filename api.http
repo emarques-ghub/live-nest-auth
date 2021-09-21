@@ -26,3 +26,14 @@ GET http://localhost:3000/exemplo
 
 ###
 GET http://localhost:3000/teste
+
+
+###
+//teste do kafka
+POST http://localhost:3000/test-kafka
+Content-Type: application/json
+
+{
+    "name": "Eduardo",
+    "BTC": "20"
+}
