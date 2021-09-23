@@ -10,7 +10,7 @@ import { JwtStrategyService } from './jwt-strategy/jwt-strategy.service';
     JwtModule.register({
       secret: 'abcd123456',
       signOptions: {
-        expiresIn: '300s',
+        expiresIn: '150s',
       },
     }),
   ],

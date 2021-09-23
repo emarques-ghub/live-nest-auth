@@ -22,7 +22,7 @@ export class AuthController {
   @Get('test-auth')
   test() {
     return {
-      name: 'Luiz Carlos',
+      name: 'Eduardo Marques',
     };
   }
 
@@ -35,7 +35,7 @@ export class AuthController {
   test2(@Req() req) {
     console.log(req.user);
     return {
-      name: 'Luiz Carlos',
+      name: 'Eduardo Marques',
     };
   }
 
@@ -43,4 +43,12 @@ export class AuthController {
   exemplo(): string {
     return 'exemplo de chamada Get';
   }
+
+  @UseGuards(JwtGuard)
+  @Get('user')
+  user(@Req() req: any) {
+    console.log(req.user);
+    return req.user;
+  }
+
 }

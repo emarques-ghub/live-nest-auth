@@ -9,7 +9,7 @@ Content-Type: application/json
 ###
 // informando o token, não expirado - exibe detalhes da requisição usando Req()
 GET http://localhost:3000/test-auth2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoidXNlcjFAdXNlci5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MzIxMDQ4NDgsImV4cCI6MTYzMjEwNTE0OH0.YM0Krp6yR7tPX_vCJ0lx1woenxDocK--bBw1K5DC0m8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoidXNlcjFAdXNlci5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MzIzNjAwMjEsImV4cCI6MTYzMjM2MDE3MX0.1V--WVzAgrCIC0yb2zPyqQ95QDDy43TsRWgObXl-JEY
 
 
 ###

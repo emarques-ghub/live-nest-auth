@@ -3,7 +3,7 @@ import { Transport } from '@nestjs/microservices';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, {cors: true});
 
   //conectar ao Kafka antes de iniciar o listen - criando um consumer para este app
   app.connectMicroservice({
